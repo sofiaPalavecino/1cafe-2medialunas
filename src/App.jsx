@@ -1,35 +1,34 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Header from './Header/Header'
+import CurrencyTable from './CurrencyTable/CurrencyTable'
+import './App.scss'
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <main>
+            <Header />
+            <section>
+                <div className="wrap">
+                    <div className="container title-wrapper">
+                        <h1>
+                            <img className='title-icon' src="./cafe.svg" alt="" /> <span>+</span> <img className='title-icon' src="./medialunas.svg" alt="" />
+                            &nbsp;Índice 2024 <br />Café + 2 Medialunas <br /> Buenos Aires
+                        </h1>
+                        <h2>Una foto de los precios del clásico combo porteño</h2>
+                    </div>
+                </div>
+            </section>
+            <section className='-theme-2'>
+                <div className="wrap">
+                    <h2 className='-bold-italic'>¿Cómo está la cosa?</h2>
+                    <p>Los precios en este índice son pasados de pesos argentinos a dólares pues... inflación&nbsp;&#128522;.</p>
+                    <hr />
+                    <CurrencyTable />
+                </div>
+            </section>
+        </main>
+    )
 }
 
 export default App

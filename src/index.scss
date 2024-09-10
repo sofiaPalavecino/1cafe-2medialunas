@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "scss/fonts";
+@import "scss/variables";
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: $plt-bgr--main;
+}
+
+section{
+    margin: 2em 0;
+    padding: 3em 0;
+    &.-theme-2{
+        background-color: $plt--main--white-bone;
+    }
+}
+
+.wrap{
+    padding: 0 8em;
+}

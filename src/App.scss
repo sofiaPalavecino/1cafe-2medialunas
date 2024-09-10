@@ -1,0 +1,21 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+main {
+    .title-icon{
+        height: 60px;
+    }
+    .title-wrapper{
+        text-align: end;
+        h1 {
+            font-weight: 800;
+            span{
+                font-size: 20px;
+                font-weight: 400;
+                font-style: italic;
+            }
+        }
+        h2 {
+            @extend .h4;
+            margin-top: 1em;
+        }
+    }
+}
