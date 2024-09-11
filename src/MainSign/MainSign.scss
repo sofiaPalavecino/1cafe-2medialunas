@@ -1,0 +1,83 @@
+//@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./../scss/variables";
+
+.main-sign{
+    background-color: $plt--main--white-bone;
+    //background-image: url('./textura.avif'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the div */
+    background-repeat: no-repeat;
+    max-width: 350px;
+    outline: 1px solid $plt--main--black-2;
+    border-left: 12px solid $plt--main--green;
+    &__header{
+        border-bottom: 1px solid $plt--main--black-2;
+        max-width: 400px !important;
+        margin: 0 !important;
+        font-weight: 700;
+        &__usd {
+            position: absolute;
+            background-color: $plt--main--black-2;
+            font-size: 0.5em;
+            font-weight: 300;
+            left: 50%;
+            top: 58%;
+            transform: translate(-50%, 100%);
+            padding: 2px 4px;
+            width: 100px;
+            clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        &__content {
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            padding: 0.3em 0;
+            &:nth-child(1){
+                border-right: 1px solid $plt--main--black-2;
+                border-left: 1px solid $plt--main--black-2;
+                font-size: 1.2em;
+            }
+            &:nth-child(2){
+                font-size: 1.6em;
+                color: $plt--main--white-bone;
+                position: relative;
+            }
+        }
+    }
+    &__body{
+        padding: 0.5em 1em;
+        border-left: 1px solid $plt--main--black-2;
+        &__header{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                margin-right: 1em;
+            }
+            &--name{
+                display: grid;
+                height: 40px;
+                span{
+                    &:nth-child(1){
+                        font-weight: 700;
+                        font-size: 15px;
+                    }
+                    &:nth-child(2){
+                        font-weight: 500;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+        &__text{
+            font-size: 14px;
+        }
+    }
+}

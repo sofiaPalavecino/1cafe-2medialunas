@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from './Header/Header'
 import CurrencyTable from './CurrencyTable/CurrencyTable'
+import MainSign from './MainSign/MainSign'
 import './App.scss'
 
 function App() {
@@ -10,12 +11,17 @@ function App() {
             <Header />
             <section>
                 <div className="wrap">
-                    <div className="container title-wrapper">
-                        <h1>
-                            <img className='title-icon' src="./cafe.svg" alt="" /> <span>+</span> <img className='title-icon' src="./medialunas.svg" alt="" />
-                            &nbsp;Índice 2024 <br />Café + 2 Medialunas <br /> Buenos Aires
-                        </h1>
-                        <h2>Una foto de los precios del clásico combo porteño</h2>
+                    <div className="row title-wrapper">
+                        <div className="col-md order-md-1 order-2">
+                            <MainSign />
+                        </div>
+                        <div className="title-wrapper__main col-md order-md-2 order-1">
+                            <h1>
+                                <img className='title-icon' src="./cafe.svg" alt="" /> <span>+</span> <img className='title-icon' src="./medialunas.svg" alt="" />
+                                &nbsp;Índice 2024 <br />Café + 2 Medialunas <br /> Buenos Aires
+                            </h1>
+                            <h2>Una foto de los precios del clásico combo porteño</h2>
+                        </div>
                     </div>
                 </div>
             </section>

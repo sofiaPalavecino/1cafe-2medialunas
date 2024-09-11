@@ -4,7 +4,9 @@ main {
         height: 60px;
     }
     .title-wrapper{
-        text-align: end;
+        &__main{
+            text-align: end;
+        }
         h1 {
             font-weight: 800;
             span{
