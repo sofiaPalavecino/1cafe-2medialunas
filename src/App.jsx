@@ -2,9 +2,31 @@ import { useState } from 'react'
 import Header from './Header/Header'
 import CurrencyTable from './CurrencyTable/CurrencyTable'
 import MainSign from './MainSign/MainSign'
+import data from './data.js'
 import './App.scss'
 
 function App() {
+
+    const [allData, setAllData] = useState(data.data)
+
+    const twitts = allData.twitts
+    const cafes = allData.cafes
+
+
+    function getCafeById(id){
+        return cafes.find((cafe) => cafe.id === id);
+    }
+    
+    const twittsElements = twitts.map((t) => {
+        const cafe = getCafeById(t.cafeId)
+        return (
+            <MainSign
+                key={t.id}
+                cafe={cafe}
+                {...t}
+            />
+        )
+    })
 
     return (
         <main>
@@ -13,7 +35,7 @@ function App() {
                 <div className="wrap">
                     <div className="row title-wrapper">
                         <div className="col-md order-md-1 order-2">
-                            <MainSign />
+                            {twittsElements}
                         </div>
                         <div className="title-wrapper__main col-md order-md-2 order-1">
                             <h1>

@@ -64,6 +64,7 @@
             &--name{
                 display: grid;
                 height: 40px;
+                margin-top: 1em;
                 span{
                     &:nth-child(1){
                         font-weight: 700;
@@ -78,6 +79,7 @@
         }
         &__text{
             font-size: 14px;
+            margin-top: 0.5em;
         }
     }
 }
