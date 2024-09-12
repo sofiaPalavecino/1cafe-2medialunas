@@ -1,0 +1,8 @@
+@import "./../../scss/tables.scss";
+.currency-table{
+    width: 175px;
+    table{
+        table-layout: fixed;
+        width: 175px;
+    }
+}
