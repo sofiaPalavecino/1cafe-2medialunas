@@ -1,0 +1,16 @@
+@import "./../../scss/variables";
+@import "./../../scss/tables.scss";
+
+.reference-table{
+    width: 300px;
+    table{
+        table-layout: fixed;
+        width: 300px;
+    }
+    [class^="-level"]{
+        font-size: 22px;
+    }
+    .title{
+        font-size: 18px;
+    }
+}
