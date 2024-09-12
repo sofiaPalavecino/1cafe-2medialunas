@@ -1,0 +1,50 @@
+@import "./variables.scss";
+
+table {
+    tr, td, th{
+        border: 1px solid $plt--main--black-2;
+        text-align: center;
+        vertical-align: middle;
+        height: 50px;
+        background-color: $plt--main--white !important;
+    }
+    .-main{
+        th, td{
+            background-color: $plt--main--grey !important;
+            color: $plt--main--white;
+        }
+    }
+    .title{
+        border-top: 10px solid $plt--main--grey;
+        background-color: $plt--main--white !important;
+    }
+    .-text{
+        font-size: 13px;
+        font-weight: 500;
+    }
+    [class^="-level"]{
+        font-weight: 700;
+    }
+    .-level{
+        &-1{
+            td{
+                background-color: $c-red-1 !important;
+            }
+        }
+        &-2{
+            td{
+                background-color: $c-orange-1 !important;
+            }
+        }
+        &-3{
+            td{
+                background-color: $c-yellow-1 !important;
+            }
+        }
+        &-4{
+            td{
+                background-color: $c-green-1 !important;
+            }
+        }
+    }
+}
