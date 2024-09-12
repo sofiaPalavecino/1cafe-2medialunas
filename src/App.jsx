@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import Header from './Header/Header'
-import CurrencyTable from './CurrencyTable/CurrencyTable'
-import MainSign from './MainSign/MainSign'
+import Header from './components/Header/Header.jsx'
+import CurrencyTable from './components/CurrencyTable/CurrencyTable.jsx'
+import MainSign from './components/MainSign/MainSign.jsx'
+import Carrousel from './components/Carrousel/Carrousel.jsx'
+import ReferenceTable from './components/ReferenceTable/ReferenceTable.jsx'
 import data from './data.js'
 import './App.scss'
 
@@ -21,7 +23,7 @@ function App() {
         const cafe = getCafeById(t.cafeId)
         return (
             <MainSign
-                key={t.id}
+                key={`sign-${t.id}`}
                 cafe={cafe}
                 {...t}
             />
@@ -34,10 +36,10 @@ function App() {
             <section>
                 <div className="wrap">
                     <div className="row title-wrapper">
-                        <div className="col-md order-md-1 order-2">
-                            {twittsElements}
+                        <div className="col-xl order-xl-1 order-2">
+                            <Carrousel items={twittsElements} />
                         </div>
-                        <div className="title-wrapper__main col-md order-md-2 order-1">
+                        <div className="title-wrapper__main col-xl order-xl-2 order-1">
                             <h1>
                                 <img className='title-icon' src="./cafe.svg" alt="" /> <span>+</span> <img className='title-icon' src="./medialunas.svg" alt="" />
                                 &nbsp;Índice 2024 <br />Café + 2 Medialunas <br /> Buenos Aires
@@ -52,7 +54,14 @@ function App() {
                     <h2 className='-bold-italic'>¿Cómo está la cosa?</h2>
                     <p>Los precios en este índice son pasados de pesos argentinos a dólares pues... inflación&nbsp;&#128522;.</p>
                     <hr />
-                    <CurrencyTable />
+                    <div className="row">
+                        <div className="col">
+                            <CurrencyTable />
+                        </div>
+                        <div className="col">
+                            <ReferenceTable />
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
