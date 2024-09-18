@@ -1,0 +1,71 @@
+@import '../../scss/tables.scss';
+
+.values-table{
+    width: fit-content;
+    table{
+        &.-dots{
+            width: 430px;
+            .subtitle {
+                th {
+                    &:nth-child(1){
+                        position: relative;
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            top: 100%;
+                            left: 100%;
+                            width: 100%;
+                            height: 46.7px;
+                            border-left: 1px solid $plt--main--black-2; /* Thickness and color of the diagonal line */
+                            transform: rotate(128deg);
+                            transform-origin: 0 0;
+                        }
+                    }
+                    &:nth-child(2){
+                        text-align: start !important;
+                    }
+                }
+            }
+            td {
+                &:nth-child(1){
+                    width: 36px !important;
+                    div {
+                        height: 20px;
+                        width: 20px;
+                        border: 1px solid $plt--main--black-2;
+                        border-radius: 100%;
+                    }
+                }
+                &:nth-child(2){
+                    text-align: start !important;
+                    width: 60% !important;
+                }
+            }
+        }
+        &.-no-dots{
+            width: 400px;
+            .subtitle {
+                th {
+                    &:nth-child(1){
+                        text-align: start !important;
+                    }
+                }
+            }
+            td {
+                &:nth-child(1){
+                    text-align: start !important;
+                    width: 60% !important;
+                }
+            }
+        }
+        tbody {
+            tr, td {
+                height: 35px !important;
+            }
+        }
+        td {
+            font-size: 13px;
+            font-weight: 500;
+        }
+    }
+}
