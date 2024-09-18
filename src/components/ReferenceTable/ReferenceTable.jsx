@@ -7,7 +7,7 @@ export default function ReferenceTable(){
             <table className="table">
                 <thead>
                     <tr>
-                        <th className='title'>Referencia Agosto 2024</th>
+                        <th className='title -theme-1'>Referencia Agosto 2024</th>
                     </tr>
                 </thead>
                 <tbody>
