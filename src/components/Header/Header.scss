@@ -1,9 +1,11 @@
+@import "../../scss/variables.scss";
 .header{
     display: flex;
     align-items: center;
     height: 65px;
     justify-content: space-between;
     padding: 1em;
+    //border-bottom: 1px solid $plt--main--black-2 !important;
     span{
         font-weight: 700;
         margin-right: auto;
