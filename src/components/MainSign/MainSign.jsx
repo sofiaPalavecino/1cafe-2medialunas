@@ -1,18 +1,6 @@
 import './MainSign.scss'
 
-export default function MainSign({cafe, user, userName, text}) {
-
-    function getPriceLevel(){
-        let level = "-level-"
-        if (cafe.price < 1350){
-            return level + "4"
-        } else if (cafe.price < 2700){
-            return level + "3"
-        } else if (cafe.price < 4060) {
-            return level + "2"
-        }
-        return level + "1"
-    }
+export default function MainSign({cafe, user, userName, text, getPriceLevel}) {
 
     return (
         <div className="main-sign">
