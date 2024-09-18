@@ -6,7 +6,7 @@ export default function CurrencyTable(){
             <table className="table">
                 <thead>
                     <tr>
-                        <th className='title' colspan="2">Termómetro</th>
+                        <th className='title -theme-1' colSpan="2">Termómetro</th>
                     </tr>
                 </thead>
                 <tbody>
