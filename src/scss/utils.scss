@@ -1,0 +1,27 @@
+@import "./variables";
+.tables-container{
+    background-color: $plt--main--green;
+    padding: 2.5em;
+    height: 400px;
+    width: 590px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border: 1px solid $plt--main--black-2;
+}
+
+.main-tables-container {
+    /* display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    flex-direction: row-reverse; */
+}
+
+hr {
+    &.-theme-1{
+        margin: 0;
+        border-top: 1px solid $plt--main--black-2 !important;
+        opacity: 100% !important;
+    }
+}

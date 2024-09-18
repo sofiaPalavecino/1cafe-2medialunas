@@ -1,6 +1,22 @@
 @import "./variables.scss";
 
 table {
+    tr{
+        &.subtitle{
+            height: 25px !important;
+            font-size: 13px;
+            th {
+                height: 25px !important;
+                background-color: $plt--main--grey !important;
+                color: $plt--main--white;
+                text-transform: uppercase;
+                padding: 4px 8px !important;
+                &:nth-child(1){
+                    text-align: start !important;
+                }
+            }
+        }
+    }
     tr, td, th{
         border: 1px solid $plt--main--black-2;
         text-align: center;
@@ -15,8 +31,15 @@ table {
         }
     }
     .title{
-        border-top: 10px solid $plt--main--grey;
-        background-color: $plt--main--white !important;
+        &.-theme-1{
+            border-top: 10px solid $plt--main--grey;
+            background-color: $plt--main--white !important;
+        }
+        &.-theme-2{
+            background-color: $plt--main--green !important;
+            font-size: 1.5em;
+            text-align: start !important;
+        }
     }
     .-text{
         font-size: 13px;
@@ -30,20 +53,76 @@ table {
             td{
                 background-color: $c-red-1 !important;
             }
+            &__1{
+                td{
+                    background-color: $c-red-2 !important;
+                    .circle {
+                        background-color: $c-red-1 !important;
+                    }
+                }
+            }
+            &__2{
+                td {
+                    background-color: $c-red-3 !important;
+                    .circle {
+                        background-color: $c-red-1 !important;
+                    }
+                }
+            }
         }
         &-2{
             td{
                 background-color: $c-orange-1 !important;
+            }
+            &__1{
+                td{
+                    background-color: $c-orange-2 !important;
+                    .circle {
+                        background-color: $c-orange-1 !important;
+                    }
+                }
+            }
+            &__2{
+                td {
+                    background-color: $c-orange-3 !important;
+                    .circle {
+                        background-color: $c-orange-1 !important;
+                    }
+                }
             }
         }
         &-3{
             td{
                 background-color: $c-yellow-1 !important;
             }
+            &__1{
+                td{
+                    background-color: $c-yellow-2 !important;
+                    .circle {
+                        background-color: $c-yellow-1 !important;
+                    }
+                }
+            }
+            &__2{
+                td {
+                    background-color: $c-yellow-3 !important;
+                    .circle {
+                        background-color: $c-yellow-1 !important;
+                    }
+                }
+            }
         }
         &-4{
             td{
                 background-color: $c-green-1 !important;
+            }
+            &__2{
+                td{
+                    background-color: $c-green-2 !important;
+                    .circle {
+                        background-color: $c-green-1 !important;
+                    }
+                }
             }
         }
     }
