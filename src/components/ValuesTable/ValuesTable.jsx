@@ -21,8 +21,8 @@ export default function ValuesTable({title, currency, year, headers, info, dots,
                     barrio && i.barrio &&
                     <td>{i.barrio}</td>
                 }
-                <td>&#36;{i.price.toString()}</td>
-                <td>&#36;{i.usdPrice.toString()}</td>
+                <td>&#36;{year ? i.history[year].price.toString() : i.price.toString()}</td>
+                <td>&#36;{year ? i.history[year].usdPrice.toString() : i.usdPrice.toString()}</td>
             </tr>
         )
     })
@@ -32,12 +32,17 @@ export default function ValuesTable({title, currency, year, headers, info, dots,
             <table className={`table ${dots ? "-dots" : "-no-dots"}`}>
                 <thead>
                     <tr>
-                        <th className='title -theme-2' colSpan={dots ? "4" : "3"}>
-                            {title}
-                            {
-                                currency &&
-                                <span>{currency}</span>
-                            }
+                        <th className={`title ${currency ? "currency" : ""} -theme-2`} colSpan={dots ? "4" : "3"}>
+                            <div>
+                                <span>{title}</span>
+                                {
+                                    currency &&
+                                    <span className='curency-values'>
+                                        <span>{currency}</span>
+                                        <span>ARS=1USD</span>
+                                    </span>
+                                }
+                            </div>
                         </th>
                     </tr>
                     {
