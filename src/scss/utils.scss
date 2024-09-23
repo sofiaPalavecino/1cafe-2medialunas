@@ -3,7 +3,7 @@
     background-color: $plt--main--green;
     padding: 2.5em;
     height: 400px;
-    width: 590px;
+    min-width: 590px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -23,5 +23,31 @@ hr {
         margin: 0;
         border-top: 1px solid $plt--main--black-2 !important;
         opacity: 100% !important;
+    }
+}
+
+.proportion {
+    display: flex;
+    &__box{
+        height: 15px !important;
+        width: 12.25px !important;
+        border: 1px solid $plt--main--black-2;
+        &:not(.last){ 
+            border-right-color: transparent !important;
+        }
+    }
+}
+
+.currencies{
+    display: flex;
+    justify-content: space-between;
+    &__values{
+        display: flex;
+        &--box{
+            >div{
+                height: 15px;
+                width: 15px;
+            }
+        }
     }
 }

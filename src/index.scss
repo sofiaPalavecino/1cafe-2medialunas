@@ -15,6 +15,9 @@ section{
     &.-theme-2{
         background-color: $plt--main--white-bone;
     }
+    &.-theme-3{
+        background-color: $plt--main--green;
+    }
 }
 
 .wrap{
@@ -27,9 +30,22 @@ section{
 .-level{
     &-1{
         background-color: $c-red-1;
+        &__1{
+            background-color: $c-red-2 !important;
+            >div {
+                background-color: $c-red-1 !important;
+            }
+        }
+        &__2{
+            background-color: $c-red-3 !important;
+            >div {
+                background-color: $c-red-1 !important;
+            }
+        }
     }
     &-2{
         background-color: $c-orange-1;
+        
     }
     &-3{
         background-color: $c-yellow-1;

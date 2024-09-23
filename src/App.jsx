@@ -5,6 +5,7 @@ import MainSign from './components/MainSign/MainSign.jsx'
 import Carrousel from './components/Carrousel/Carrousel.jsx'
 import ReferenceTable from './components/ReferenceTable/ReferenceTable.jsx'
 import ValuesTable from './components/ValuesTable/ValuesTable.jsx'
+import Masonry from '@mui/lab/Masonry'
 import data from './data.js'
 import './App.scss'
 
@@ -97,46 +98,107 @@ function App() {
             <hr className='-theme-1' />
             <section className='-theme-2'>
                 <div className="wrap">
-                    <h2 className='-bold-italic'>¿Cómo está la cosa?</h2>
-                    <div className='tables-container'>
-                        <CurrencyTable />
-                        <ReferenceTable />
-                    </div>
-                    <ValuesTable 
+                    <h2 className='-bold-italic mb-5'>¿Cómo está la cosa?</h2>
+                    <Masonry columns={3} spacing={3}>
+                        <ValuesTable 
+                            headers={["Menor/Mayor", "ARS", "USD"]}
+                            currency={currencies[2024].currency}
+                            title="2024"
+                            info={currenciesData[2024]}
+                            getPriceLevelClass={getPriceLevel}
+                        />
+                        <ValuesTable 
                         headers={["Menor/Mayor", "ARS", "USD"]}
                         currency={currencies[2023].currency}
-                        year={2024}
+                        title="2023"
+                        year={2023}
                         info={currenciesData[2023]}
                         getPriceLevelClass={getPriceLevelClass}
-                    />
-                    <ValuesTable
-                        title="Notables"
-                        headers={["Bar", "ARS", "USD"]}
-                        info={cafesNotables}
-                        getPriceLevelClass={getPriceLevelClass}
-                        dots={true}
-                    />
-                    <ValuesTable
-                        title="Facultades"
-                        headers={["Facultad", "ARS", "USD"]}
-                        info={cafesUni}
-                        getPriceLevelClass={getPriceLevelClass}
-                        dots={true}
-                    />
-                    <ValuesTable
-                        title="Cadenas de Café"
-                        headers={["Cafeterías", "ARS", "USD"]}
-                        info={cafeChain}
-                        getPriceLevelClass={getPriceLevelClass}
-                        dots={true}
-                    />
-                    <ValuesTable
-                        title="Cadenas"
-                        headers={["Comida Rápida", "ARS", "USD"]}
-                        info={fastFood}
-                        getPriceLevelClass={getPriceLevelClass}
-                        dots={true}
-                    />
+                        />
+                        <ValuesTable 
+                            headers={["Menor/Mayor", "ARS", "USD"]}
+                            currency={currencies[2022].currency}
+                            title="2022"
+                            year={2022}
+                            info={currenciesData[2022]}
+                            getPriceLevelClass={getPriceLevelClass}
+                        />
+                        <CurrencyTable />
+                        <ReferenceTable />
+                        <ValuesTable
+                            title="Cadenas"
+                            headers={["Comida Rápida", "ARS", "USD"]}
+                            info={fastFood}
+                            getPriceLevelClass={getPriceLevelClass}
+                            dots={true}
+                        />
+                        <ValuesTable
+                            title="Notables"
+                            headers={["Bar", "ARS", "USD"]}
+                            info={cafesNotables}
+                            getPriceLevelClass={getPriceLevelClass}
+                            dots={true}
+                        />
+                        <ValuesTable
+                            title="Facultades"
+                            headers={["Facultad", "ARS", "USD"]}
+                            info={cafesUni}
+                            getPriceLevelClass={getPriceLevelClass}
+                            dots={true}
+                        />
+                        <ValuesTable
+                            title="Cadenas de Café"
+                            headers={["Cafeterías", "ARS", "USD"]}
+                            info={cafeChain}
+                            getPriceLevelClass={getPriceLevelClass}
+                            dots={true}
+                        />
+                        
+                    </Masonry>
+                    
+                    
+                </div>
+            </section>
+            <hr className='-theme-1' />
+            <section className='-theme-3'>
+                <div className="wrap">
+                    <div className="row">
+                        <div className="col-3">
+                            <h5 className='fs-6'><strong>¿Cúanto sale un café con medialunas en Buenos Aires?</strong></h5>
+                        </div>
+                        <div className="col">
+                            <div className="currencies">
+                                <span>Proporción</span>
+                                <div className="currencies__values">
+                                    <div className="currencies__values--box">
+                                        <div className='-level-1'></div>
+                                        <span>USD &#60;1</span>
+                                    </div>
+                                    <div className="currencies__values--box">
+                                        <div className='-level-2'></div>
+                                        <span>USD 1</span>
+                                    </div>
+                                    <div className="currencies__values--box">
+                                        <div className='-level-3'></div>
+                                        <span>USD 2</span>
+                                    </div>
+                                    <div className="currencies__values--box -level-4__1">
+                                        <div className='-level-4'></div>
+                                        <span>USD &#62;2</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="proportion">
+                                {
+                                    cafes.map((c, i) => {
+                                        return (
+                                            <div className={`proportion__box ${getPriceLevel(c.price)} ${i == cafes.length - 1 ? "last" : ""}`}></div>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

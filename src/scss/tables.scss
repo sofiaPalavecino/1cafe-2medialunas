@@ -31,6 +31,19 @@ table {
         }
     }
     .title{
+        &.currency {
+            div {
+                display: flex;
+                justify-content: space-between;
+                .curency-values {
+                    span{
+                        &:nth-child(2){
+                            font-weight: 500 !important;
+                        }
+                    }
+                }
+            }
+        }
         &.-theme-1{
             border-top: 10px solid $plt--main--grey;
             background-color: $plt--main--white !important;
