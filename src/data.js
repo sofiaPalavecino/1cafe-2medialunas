@@ -125,7 +125,7 @@ export default {
                 "name": "Dandy",
                 "price": 1900,
                 "usdPrice": 1.40,
-                "type": "cafe-chain",
+                "type": "cafe",
                 "barrio": "Cadena"
             },
             {
@@ -165,7 +165,7 @@ export default {
                 "name": "Lo de Carlitos",
                 "price": 3200,
                 "usdPrice": 2.37,
-                "type": "fast-food",
+                "type": "cafe",
                 "barrio": "Cadena"
             }
             ,
@@ -505,7 +505,7 @@ export default {
                 "type": "cafe-notable",
                 "barrio": "Caballito",
                 "history": {
-                    "2023": {
+                    "2022": {
                         "price": 910,
                         "usdPrice": 3
                     }
@@ -642,14 +642,6 @@ export default {
                 "name": "FADU",
                 "price": 2800,
                 "usdPrice": 2.07,
-                "type": "university",
-                "barrio": "Facultad"
-            },
-            {
-                "id": 73,
-                "name": "Derecho",
-                "price": 4000,
-                "usdPrice": 2.96,
                 "type": "university",
                 "barrio": "Facultad"
             }
