@@ -45,12 +45,41 @@ section{
     }
     &-2{
         background-color: $c-orange-1;
-        
+        &__1{
+            background-color: $c-orange-2 !important;
+            >div {
+                background-color: $c-orange-1 !important;
+            }
+        }
+        &__2{
+            background-color: $c-orange-3 !important;
+            >div {
+                background-color: $c-orange-1 !important;
+            }
+        }
     }
     &-3{
         background-color: $c-yellow-1;
+        &__1{
+            background-color: $c-yellow-2 !important;
+            >div {
+                background-color: $c-yellow-1 !important;
+            }
+        }
+        &__2{
+            background-color: $c-yellow-3 !important;
+            >div {
+                background-color: $c-yellow-1 !important;
+            }
+        }
     }
     &-4{
         background-color: $c-green-1;
+        &__2{
+            background-color: $c-green-2 !important;
+            >div {
+                background-color: $c-green-1 !important;
+            }
+        }
     }
 }

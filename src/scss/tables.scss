@@ -69,6 +69,9 @@ table {
             &__1{
                 td{
                     background-color: $c-red-2 !important;
+                    &.line{
+                        background-color: $c-red-1 !important;
+                    }
                     .circle {
                         background-color: $c-red-1 !important;
                     }
@@ -77,6 +80,9 @@ table {
             &__2{
                 td {
                     background-color: $c-red-3 !important;
+                    &.line{
+                        background-color: $c-red-1 !important;
+                    }
                     .circle {
                         background-color: $c-red-1 !important;
                     }
@@ -90,6 +96,9 @@ table {
             &__1{
                 td{
                     background-color: $c-orange-2 !important;
+                    &.line{
+                        background-color: $c-orange-1 !important;
+                    }
                     .circle {
                         background-color: $c-orange-1 !important;
                     }
@@ -98,6 +107,9 @@ table {
             &__2{
                 td {
                     background-color: $c-orange-3 !important;
+                    &.line{
+                        background-color: $c-orange-1 !important;
+                    }
                     .circle {
                         background-color: $c-orange-1 !important;
                     }
@@ -111,6 +123,9 @@ table {
             &__1{
                 td{
                     background-color: $c-yellow-2 !important;
+                    &.line{
+                        background-color: $c-yellow-1 !important;
+                    }
                     .circle {
                         background-color: $c-yellow-1 !important;
                     }
@@ -119,6 +134,9 @@ table {
             &__2{
                 td {
                     background-color: $c-yellow-3 !important;
+                    &.line{
+                        background-color: $c-yellow-1 !important;
+                    }
                     .circle {
                         background-color: $c-yellow-1 !important;
                     }
@@ -132,6 +150,9 @@ table {
             &__2{
                 td{
                     background-color: $c-green-2 !important;
+                    &.line {
+                        background-color: $c-green-1 !important;
+                    }
                     .circle {
                         background-color: $c-green-1 !important;
                     }
