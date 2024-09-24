@@ -1,6 +1,18 @@
 import './ValuesTable.scss'
 
-export default function ValuesTable({title, currency, year, headers, info, dots, barrio, getPriceLevelClass}){
+export default function ValuesTable({
+    title, currency, year, headers, info, line, dots, barrio, getPriceLevelClass, scale
+}){
+
+    let colSpan = "3"
+    let tableClass = "-no-dots"
+    if (dots) {
+        colSpan = "4"
+        tableClass = "-dots"
+    } else if(line) {
+        colSpan = "5"
+        tableClass = "-line"
+    }
 
     const headersElements = headers === null
                             ? []
@@ -16,10 +28,14 @@ export default function ValuesTable({title, currency, year, headers, info, dots,
                     dots &&
                     <td><div className='circle'></div></td>
                 }
+                {
+                    line &&
+                    <td className='line'></td>
+                }
                 <td>{i.name}</td>
                 {
                     barrio && i.barrio &&
-                    <td>{i.barrio}</td>
+                    <td className='barrio'>{i.barrio}</td>
                 }
                 <td>&#36;{year ? i.history[year].price.toString() : i.price.toString()}</td>
                 <td>&#36;{year ? i.history[year].usdPrice.toString() : i.usdPrice.toString()}</td>
@@ -28,28 +44,34 @@ export default function ValuesTable({title, currency, year, headers, info, dots,
     })
 
     return (
-        <div className='values-table'>
-            <table className={`table ${dots ? "-dots" : "-no-dots"}`}>
+        <div className={`values-table ${scale ? 'scale' : ''}`}>
+            <table className={`table ${tableClass}`}>
                 <thead>
-                    <tr>
-                        <th className={`title ${currency ? "currency" : ""} -theme-2`} colSpan={dots ? "4" : "3"}>
-                            <div>
-                                <span>{title}</span>
-                                {
-                                    currency &&
-                                    <span className='curency-values'>
-                                        <span>{currency}</span>
-                                        <span>ARS=1USD</span>
-                                    </span>
-                                }
-                            </div>
-                        </th>
-                    </tr>
+                    { title && 
+                        <tr>
+                            <th className={`title ${currency ? "currency" : ""} -theme-2`} colSpan={colSpan}>
+                                <div>
+                                    <span>{title}</span>
+                                    {
+                                        currency &&
+                                        <span className='curency-values'>
+                                            <span>{currency}</span>
+                                            <span>ARS=1USD</span>
+                                        </span>
+                                    }
+                                </div>
+                            </th>
+                        </tr>
+                    }
                     {
                         headersElements &&
-                        <tr className='subtitle'>
+                        <tr className="subtitle">
                             {
                                 dots &&
+                                <th></th>
+                            }
+                            {
+                                line &&
                                 <th></th>
                             }
                             { headersElements }
