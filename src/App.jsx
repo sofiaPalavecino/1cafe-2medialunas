@@ -22,6 +22,31 @@ function App() {
     const cafeChain = cafes.filter((c) => c.type == "cafe-chain")
     const fastFood = cafes.filter((c) => c.type == "fast-food")
 
+    function splitArrayInParts(array, partsNum){
+        const arraysLength = Math.floor(array.length / partsNum) //TODO
+        let arrayParts = []
+        let indexFromNum = 0
+        let indexToNum = arraysLength
+        for (let i = 1; i <= partsNum; i++) {
+            console.warn(indexFromNum + "-" + indexToNum)
+            arrayParts.push(array.slice(indexFromNum,indexToNum))
+            indexFromNum = indexToNum
+            indexToNum += arraysLength
+        }
+        return arrayParts
+    }
+
+    const cafesTables = splitArrayInParts(cafes, 4).map((cafesPart) => (
+        <ValuesTable 
+            headers={["Lugar", "Barrio", "ARS", "USD"]}
+            barrio={true}
+            line={true}
+            info={cafesPart}
+            getPriceLevelClass={getPriceLevelClass}
+            scale={true}
+        />
+    ))
+
     function getPriceLevel(price){
         let level = "-level-"
         if (price < 1350){
@@ -99,7 +124,7 @@ function App() {
             <section className='-theme-2'>
                 <div className="wrap">
                     <h2 className='-bold-italic mb-5'>¿Cómo está la cosa?</h2>
-                    <Masonry columns={3} spacing={3}>
+                    <Masonry columns={{xs: 1, md: 2, lg: 3}} spacing={4}>
                         <ValuesTable 
                             headers={["Menor/Mayor", "ARS", "USD"]}
                             currency={currencies[2024].currency}
@@ -164,40 +189,45 @@ function App() {
                 <div className="wrap">
                     <div className="row">
                         <div className="col-3">
-                            <h5 className='fs-6'><strong>¿Cúanto sale un café con medialunas en Buenos Aires?</strong></h5>
+                            <h5 className='fs-6 mb-0'><strong>¿Cúanto sale un café con medialunas en Buenos Aires?</strong></h5>
                         </div>
-                        <div className="col">
-                            <div className="currencies">
-                                <span>Proporción</span>
-                                <div className="currencies__values">
-                                    <div className="currencies__values--box">
-                                        <div className='-level-1'></div>
-                                        <span>USD &#60;1</span>
-                                    </div>
-                                    <div className="currencies__values--box">
-                                        <div className='-level-2'></div>
-                                        <span>USD 1</span>
-                                    </div>
-                                    <div className="currencies__values--box">
-                                        <div className='-level-3'></div>
-                                        <span>USD 2</span>
-                                    </div>
-                                    <div className="currencies__values--box -level-4__1">
-                                        <div className='-level-4'></div>
-                                        <span>USD &#62;2</span>
+                        <div className="col d-flex justify-content-end">
+                            <div className="scale">
+                                <div className="currencies">
+                                    <span>Proporción</span>
+                                    <div className="currencies__values">
+                                        <div className="currencies__values--box -level-4__2">
+                                            <div></div>
+                                            <span>USD &#60;1</span>
+                                        </div>
+                                        <div className="currencies__values--box -level-3__1">
+                                            <div></div>
+                                            <span>USD 1</span>
+                                        </div>
+                                        <div className="currencies__values--box -level-2__1">
+                                            <div></div>
+                                            <span>USD 2</span>
+                                        </div>
+                                        <div className="currencies__values--box -level-1__2">
+                                            <div></div>
+                                            <span>USD &#62;2</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="proportion">
-                                {
-                                    cafes.map((c, i) => {
-                                        return (
-                                            <div className={`proportion__box ${getPriceLevel(c.price)} ${i == cafes.length - 1 ? "last" : ""}`}></div>
-                                        )
-                                    })
-                                }
+                                <div className="proportion pt-2">
+                                    {
+                                        cafes.map((c, i) => {
+                                            return (
+                                                <div className={`proportion__box ${getPriceLevel(c.price)} ${i == cafes.length - 1 ? "last" : ""}`}></div>
+                                            )
+                                        })
+                                    }
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="cafe-tables d-flex flex-wrap pt-4">
+                        { cafesTables }
                     </div>
                 </div>
             </section>
