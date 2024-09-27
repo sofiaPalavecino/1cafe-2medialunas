@@ -11,7 +11,26 @@ body {
 }
 
 section{
-    padding: 3em 0;
+    padding: 2.5em 0;
+    position: relative;
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 10%;
+        z-index: -1;
+        background-image: url(/public/textura.avif);
+        /* background-repeat: no-repeat; */
+        background-position: 50% 0;
+        /* background-size: cover; */
+    }
+    &.-theme-1{
+        
+    }
     &.-theme-2{
         background-color: $plt--main--white-bone;
     }
@@ -82,4 +101,11 @@ section{
             }
         }
     }
+}
+
+.scale-col{
+    @include media-breakpoint-up(lg){
+        justify-content: end;
+    }
+    justify-content: center;
 }

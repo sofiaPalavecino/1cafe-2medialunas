@@ -1,3 +1,13 @@
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+h1 {
+    &.main-title{
+        @include media-breakpoint-up(lg){
+            font-size: 3.3rem;
+        }
+    }
+}
+
 h2{
     &.-bold-italic{
         font-style: italic;
