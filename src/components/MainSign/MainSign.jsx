@@ -1,6 +1,6 @@
 import './MainSign.scss'
 
-export default function MainSign({cafe, user, userName, text, getPriceLevel}) {
+export default function MainSign({cafe, user, userName, text, picture, getPriceLevel}) {
 
     return (
         <div className="main-sign">
@@ -13,7 +13,7 @@ export default function MainSign({cafe, user, userName, text, getPriceLevel}) {
             </div>
             <div className="main-sign__body">
                 <div className="main-sign__body__header">
-                    <img src="./vite.svg" alt="" />
+                    <img src={`./${picture}`} alt="" />
                     <div className="main-sign__body__header--name">
                         <span>{userName}</span>
                         <span>{user}</span>
