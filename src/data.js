@@ -7,42 +7,48 @@ export default {
                 "cafeId": 1,
                 "user": "@HAGOV875",
                 "userName": "HAGOV 875",
-                "text": 'En Constitución el Gordo Valor vende "café de normalidad" con dos soberbias medialunas a 8500 pesos. Acepta pago en bitcoin y si le decís que vas de parte de "El Tuerca" te hace descuento.'
+                "text": 'En Constitución el Gordo Valor vende "café de normalidad" con dos soberbias medialunas a 8500 pesos. Acepta pago en bitcoin y si le decís que vas de parte de "El Tuerca" te hace descuento.',
+                "picture": "hagov.jpg"
             },
             {
                 "id": 2,
                 "cafeId": 2,
                 "user": "@CandenteMañana",
                 "userName": "Beatriz Viterbo",
-                "text": "Cambiará el universo pero el Británico nunca lo hará. $3400."
+                "text": "Cambiará el universo pero el Británico nunca lo hará. $3400.",
+                "picture": "perrito.jpeg"
             },
             {
                 "id": 3,
                 "cafeId": 3,
                 "user": "@quebracho_castania",
                 "userName": "El Loco Daisy May Queen",
-                "text": "En el CECEN está a $1200, hace tres años que desayuno ahí casi todos los días."
+                "text": "En el CECEN está a $1200, hace tres años que desayuno ahí casi todos los días.",
+                "picture": "pilar.jpeg"
             },
             {
                 "id": 4,
                 "cafeId": 4,
                 "user": "@Ericpulgar_",
                 "userName": "Eric Pulgar",
-                "text": "$1500 crocantes. No es una experiencia gastronómica trascendental pero desayunar mientras mirás una gigantografía del Dibu Martinez es un buen plan. Ponele."
+                "text": "$1500 crocantes. No es una experiencia gastronómica trascendental pero desayunar mientras mirás una gigantografía del Dibu Martinez es un buen plan. Ponele.",
+                "picture": "pulgar.jpeg"
             },
             {
                 "id": 5,
                 "cafeId": 5,
                 "user": "@Juuli_1995",
                 "userName": "Niña merienda",
-                "text": "En Café Martinez está a $4150 y el café es espumoso y sensual."
+                "text": "En Café Martinez está a $4150 y el café es espumoso y sensual.",
+                "picture": "lisa.jpeg"
             },
             {
                 "id": 6,
                 "cafeId": 6,
                 "user": "@Gordigol69",
                 "userName": "Gordigol69",
-                "text": "-Le Pain Quotidien- significa el dolor cotidiano en francés. $9800 por un café y 2 medialunas. Ouch."
+                "text": "-Le Pain Quotidien- significa el dolor cotidiano en francés. $9800 por un café y 2 medialunas. Ouch.",
+                "picture": "gato.jpeg"
             }
         ],
         "cafes": [
