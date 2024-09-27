@@ -1,7 +1,7 @@
 import './ValuesTable.scss'
 
 export default function ValuesTable({
-    title, currency, year, headers, info, line, dots, barrio, getPriceLevelClass, scale
+    title, currency, year, headers, info, line, dots, barrio, getPriceLevelClass, scale, tableStyle
 }){
 
     let colSpan = "3"
@@ -45,7 +45,7 @@ export default function ValuesTable({
 
     return (
         <div className={`values-table ${scale ? 'scale' : ''}`}>
-            <table className={`table ${tableClass}`}>
+            <table className={`table ${tableClass}`} /* style={tableStyle} */>
                 <thead>
                     { title && 
                         <tr>
