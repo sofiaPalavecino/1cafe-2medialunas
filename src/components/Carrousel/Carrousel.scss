@@ -1,10 +1,19 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
 .slider-container {
     .slick-track{
-        width: 450px !important;
+        @include media-breakpoint-up(md){
+            width: 450px !important;
+        }
+        width: 350px !important;
     }
     .slick-slide{
-        height: 280px !important;
-        width: 450px !important;
+        @include media-breakpoint-up(md){
+            height: 280px !important;
+            width: 450px !important;
+        }
+        height: 285px;
+        width: 350px !important;
         margin: 0 auto;
     }
 }
