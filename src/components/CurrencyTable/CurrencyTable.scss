@@ -4,5 +4,10 @@
     table{
         table-layout: fixed;
         width: 175px;
+        transition: box-shadow 200ms ease, transform 200ms ease;
+        &:hover {
+            transform: translate(4px, -4px);
+            box-shadow: -8px 8px 0 $plt--main--black-2;
+        }
     }
 }
