@@ -6,6 +6,11 @@
     table{
         table-layout: fixed;
         width: 300px;
+        transition: box-shadow 200ms ease, transform 200ms ease;
+        &:hover {
+            transform: translate(4px, -4px);
+            box-shadow: -8px 8px 0 $plt--main--black-2;
+        }
     }
     [class^="-level"]{
         font-size: 22px;
