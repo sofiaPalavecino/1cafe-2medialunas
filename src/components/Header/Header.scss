@@ -4,8 +4,9 @@
     align-items: center;
     height: 65px;
     justify-content: space-between;
-    padding: 1em;
-    //border-bottom: 1px solid $plt--main--black-2 !important;
+    padding: 1em 2.5em;
+    background-color: $plt--main--green;
+    border: 1px solid $plt--main--black-2 !important;
     span{
         font-weight: 700;
         margin-right: auto;
