@@ -27,15 +27,28 @@ hr {
 }
 
 .proportion {
-    display: flex;
-    &_lg{
-         
+    &_md{
+        @include media-breakpoint-up(md){
+            display: flex;
+        }
+        display: none;
+        &__box{
+            height: 15px !important;
+            width: 12.1px !important;
+            border: 1px solid $plt--main--black-2;
+            &:not(.last){ 
+                border-right-color: transparent !important;
+            }
+        }
     }
+    @include media-breakpoint-up(md){
+        display: none;
+    }
+    display: inline-flex;
     &__box{
-        height: 15px !important;
-        width: 12.1px !important;
+        height: 15px;
         border: 1px solid $plt--main--black-2;
-        &:not(.last){ 
+        &:not(:nth-last-child(1)){
             border-right-color: transparent !important;
         }
     }
@@ -46,8 +59,10 @@ hr {
 }
 
 .currencies{
-    display: flex;
-    justify-content: space-between;
+    @include media-breakpoint-up(sm){
+        display: flex;
+        justify-content: space-between;
+    }
     >span {
         text-transform: uppercase;
         font-weight: 700;
@@ -60,7 +75,14 @@ hr {
             border: 1px solid $plt--main--black-2;
             height: 22px;
             width: 80px;
-            margin-left: 0.5em;
+            &:nth-child(1){
+                @include media-breakpoint-up(sm){
+                    margin-left: 0.5em;
+                }
+            }
+            &:not(:nth-child(1)){
+                margin-left: 0.5em;
+            }
             >div{
                 height: 20px;
                 width: 20px;
