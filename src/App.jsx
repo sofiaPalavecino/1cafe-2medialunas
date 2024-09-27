@@ -22,13 +22,39 @@ function App() {
     const cafeChain = cafes.filter((c) => c.type == "cafe-chain")
     const fastFood = cafes.filter((c) => c.type == "fast-food")
 
+    function getPriceLevel(price){
+        let level = "-level-"
+        if (price < 1350){
+            return level + "4"
+        } else if (price < 2700){
+            return level + "3"
+        } else if (price < 4060) {
+            return level + "2"
+        }
+        return level + "1"
+    }
+
+    function getProportions(array){
+        let countPerCost = { "-level-4": 0, "-level-3": 0, "-level-2": 0, "-level-1": 0 }
+        let proportions = []
+        for (let i = 0; i < array.length; i++) {
+            const cafe = array[i];
+            const level = getPriceLevel(cafe.price)
+            countPerCost[level] += 1
+        }
+
+        for (const key of Object.keys(countPerCost)){
+            proportions[key] = `${(countPerCost[key] * 100) / array.length}%`
+        }
+        return proportions
+    }
+
     function splitArrayInParts(array, partsNum){
         const arraysLength = Math.floor(array.length / partsNum) //TODO
         let arrayParts = []
         let indexFromNum = 0
         let indexToNum = arraysLength
         for (let i = 1; i <= partsNum; i++) {
-            console.warn(indexFromNum + "-" + indexToNum)
             arrayParts.push(array.slice(indexFromNum,indexToNum))
             indexFromNum = indexToNum
             indexToNum += arraysLength
@@ -46,18 +72,6 @@ function App() {
             scale={true}
         />
     ))
-
-    function getPriceLevel(price){
-        let level = "-level-"
-        if (price < 1350){
-            return level + "4"
-        } else if (price < 2700){
-            return level + "3"
-        } else if (price < 4060) {
-            return level + "2"
-        }
-        return level + "1"
-    }
 
     function getPriceLevelClass(price, tone){
         let level = getPriceLevel(price)
@@ -84,6 +98,17 @@ function App() {
         )
     })
 
+    const proportions = getProportions(cafes)
+
+    const proportionsBoxes = Object.keys(proportions).map((key, i) => (
+        <div 
+            key={`box_${i}`} 
+            className={`proportion__box ${key}`}  
+            style={{"width": proportions[key]}}
+        >
+        </div>
+    ))
+
     const currenciesData = {
         "2024": [
             getCafeById(currencies[2024].cheapestBar),
@@ -99,31 +124,29 @@ function App() {
         ]
     }
 
-    console.log(currenciesData)
-
     return (
         <main>
             <Header />
-            <section>
+            <section className='-theme-2'>
                 <div className="wrap">
                     <div className="row title-wrapper">
-                        <div className="col-xl order-xl-1 order-2">
+                        <div className="col-xl order-xl-1 order-2 mt-5 mt-md-4 mt-lx-0">
                             <Carrousel items={twittsElements} />
                         </div>
                         <div className="title-wrapper__main col-xl order-xl-2 order-1">
-                            <h1>
+                            <h1 className='main-title'>
                                 <img className='title-icon' src="./cafe.svg" alt="" /> <span>+</span> <img className='title-icon' src="./medialunas.svg" alt="" />
                                 &nbsp;Índice 2024 <br />Café + 2 Medialunas <br /> Buenos Aires
+                                <h2>Una foto de los precios del clásico combo porteño</h2>
                             </h1>
-                            <h2>Una foto de los precios del clásico combo porteño</h2>
                         </div>
                     </div>
                 </div>
             </section>
             <hr className='-theme-1' />
-            <section className='-theme-2'>
+            <section className='-theme-1'>
                 <div className="wrap">
-                    <h2 className='-bold-italic mb-5'>¿Cómo está la cosa?</h2>
+                    <h2 className='-bold-italic mb-4'>¿Cómo está la cosa?</h2>
                     <Masonry columns={{xs: 1, md: 2, lg: 3}} spacing={4}>
                         <ValuesTable 
                             headers={["Menor/Mayor", "ARS", "USD"]}
@@ -131,14 +154,16 @@ function App() {
                             title="2024"
                             info={currenciesData[2024]}
                             getPriceLevelClass={getPriceLevel}
+                            tableStyle={{"max-width": "360px", "margin": "0 auto"}}
                         />
                         <ValuesTable 
-                        headers={["Menor/Mayor", "ARS", "USD"]}
-                        currency={currencies[2023].currency}
-                        title="2023"
-                        year={2023}
-                        info={currenciesData[2023]}
-                        getPriceLevelClass={getPriceLevelClass}
+                            headers={["Menor/Mayor", "ARS", "USD"]}
+                            currency={currencies[2023].currency}
+                            title="2023"
+                            year={2023}
+                            info={currenciesData[2023]}
+                            getPriceLevelClass={getPriceLevelClass}
+                            tableStyle={{"max-width": "360px", "margin": "0 auto"}}
                         />
                         <ValuesTable 
                             headers={["Menor/Mayor", "ARS", "USD"]}
@@ -147,6 +172,7 @@ function App() {
                             year={2022}
                             info={currenciesData[2022]}
                             getPriceLevelClass={getPriceLevelClass}
+                            tableStyle={{"max-width": "360px", "margin": "0 auto"}}
                         />
                         <CurrencyTable />
                         <ReferenceTable />
@@ -188,14 +214,14 @@ function App() {
             <section className='-theme-3'>
                 <div className="wrap">
                     <div className="row">
-                        <div className="col-3">
-                            <h5 className='fs-6 mb-0'><strong>¿Cúanto sale un café con medialunas en Buenos Aires?</strong></h5>
+                        <div className="col-xl-3">
+                            <h4 className='fs-5 mb-0'><strong>¿Cúanto sale un café con medialunas en Buenos Aires?</strong></h4>
                         </div>
-                        <div className="col d-flex justify-content-end">
-                            <div className="scale">
+                        <div className="col scale-col mt-4 mt-xl-0 d-flex align-items-center">
+                            <div className="scale w-100">
                                 <div className="currencies">
                                     <span>Proporción</span>
-                                    <div className="currencies__values">
+                                    <div className="currencies__values mt-2 mt-sm-0">
                                         <div className="currencies__values--box -level-4__2">
                                             <div></div>
                                             <span>USD &#60;1</span>
@@ -214,19 +240,22 @@ function App() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="proportion pt-2">
+                                <div className="proportion_md pt-2">
                                     {
                                         cafes.map((c, i) => {
                                             return (
-                                                <div className={`proportion__box ${getPriceLevel(c.price)} ${i == cafes.length - 1 ? "last" : ""}`}></div>
+                                                <div className={`proportion_md__box ${getPriceLevel(c.price)} ${i == cafes.length - 1 ? "last" : ""}`}></div>
                                             )
                                         })
                                     }
                                 </div>
+                                <div className='w-100 proportion mt-3'>
+                                    {proportionsBoxes}
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className="cafe-tables d-flex flex-wrap pt-4">
+                    <div className="cafe-tables d-flex flex-wrap pt-3 pt-sm-4">
                         { cafesTables }
                     </div>
                 </div>

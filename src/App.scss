@@ -1,14 +1,43 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import "scss/variables";
 main {
     .title-icon{
         height: 60px;
     }
     .title-wrapper{
         &__main{
-            text-align: end;
+            @include media-breakpoint-up(md){
+                text-align: end;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
         }
         h1 {
             font-weight: 800;
+            padding: 0.5em;
+            border: 1px solid $plt--main--black-2;
+            transform: translate(4px, -4px);
+            @include media-breakpoint-up(md){
+                width: fit-content;
+                box-shadow: 8px 8px 0 $plt--main--black-2;
+            }
+            box-shadow: -8px 8px 0 $plt--main--black-2;
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 8%;
+                z-index: -1;
+                background-image: url(/public/textura.avif);
+                /* background-repeat: no-repeat; */
+                background-position: 50% 0;
+                /* background-size: cover; */
+            }
             span{
                 font-size: 20px;
                 font-weight: 400;
