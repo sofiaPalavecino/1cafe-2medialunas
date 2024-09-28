@@ -4,7 +4,7 @@
     align-items: center;
     height: 65px;
     justify-content: space-between;
-    padding: 1em 2.5em;
+    padding: 0 2.5em;
     background-color: $plt--main--green;
     border: 1px solid $plt--main--black-2 !important;
     span{
@@ -18,8 +18,30 @@
     &__links{
         display: flex;
         justify-content: space-between;
+        height: 100%;
         div {
             margin: 0 2em;
+            padding: 1em;
+            &:hover {
+                transform: translate(4px, -4px);
+                box-shadow: 4px 4px 0 $plt--main--black-2;
+                border: 1px solid $plt--main--black-2;
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 8%;
+                    z-index: -1;
+                    background-image: url(/textura.avif);
+                    /* background-repeat: no-repeat; */
+                    background-position: 50% 0;
+                    /* background-size: cover; */
+                }
+            }
             a {
                 text-decoration: none;
                 color: black;
