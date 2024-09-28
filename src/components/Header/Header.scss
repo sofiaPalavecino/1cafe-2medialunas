@@ -42,6 +42,10 @@
                     /* background-size: cover; */
                 }
             }
+            &:active {
+                transform: translate(0px, 0px) !important;
+                box-shadow: none !important;
+            }
             a {
                 text-decoration: none;
                 color: black;
