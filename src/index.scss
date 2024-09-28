@@ -104,8 +104,8 @@ section{
 }
 
 .scale-col{
-    @include media-breakpoint-up(lg){
+    @include media-breakpoint-up(xl){
         justify-content: end;
     }
-    justify-content: center;
+    /* justify-content: center; */
 }
