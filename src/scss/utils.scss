@@ -33,8 +33,11 @@ hr {
         }
         display: none;
         &__box{
+            @include media-breakpoint-up(xl){
+                width: 12.1px !important;
+            }
+            width: 13px !important;
             height: 15px !important;
-            width: 12.1px !important;
             border: 1px solid $plt--main--black-2;
             &:not(.last){ 
                 border-right-color: transparent !important;
@@ -55,7 +58,9 @@ hr {
 }
 
 .scale {
-    max-width: 870px;
+    @include media-breakpoint-up(xl){
+        max-width: 870px;
+    }
 }
 
 .currencies{
