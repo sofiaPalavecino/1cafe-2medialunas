@@ -214,7 +214,7 @@ function App() {
             <section className='-theme-3'>
                 <div className="wrap">
                     <div className="row">
-                        <div className="col-xl-3">
+                        <div className="col col-xl-3">
                             <h4 className='fs-5 mb-0'><strong>¿Cúanto sale un café con medialunas en Buenos Aires?</strong></h4>
                         </div>
                         <div className="col scale-col mt-4 mt-xl-0 d-flex align-items-center">
