@@ -143,7 +143,7 @@ function App() {
                     <br />
                     Podés encontrar la infografía original <a href="https://www.instagram.com/p/C_HJv7RPIcJ/" target="_blank">acá</a>.
                     <hr />
-                    Este sitio fué desarrollado por <a href="https://github.com/sofiaPalavecino" target="_blank">Sofía Palavecino</a>
+                    Dev: <a href="https://github.com/sofiaPalavecino" target="_blank">Sofía Palavecino</a>
                 </Modal.Body>
                 <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
