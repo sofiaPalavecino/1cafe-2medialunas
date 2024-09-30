@@ -1,17 +1,21 @@
-//@import "../../node_modules/bootstrap/scss/bootstrap";
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
 @import "./../../scss/variables";
 
 .main-sign{
     background-color: $plt--main--white-bone;
-    max-width: 350px;
+    @include media-breakpoint-up(sm){
+        max-width: 480px;
+    }
+    //height: 300px;
     outline: 1px solid $plt--main--black-2;
     border-left: 12px solid $plt--main--green;
     margin: 0 auto 3em auto;
     &__header{
         border-bottom: 1px solid $plt--main--black-2;
-        max-width: 400px !important;
+        //max-width: 400px !important;
         margin: 0 !important;
         font-weight: 700;
+        height: 55px;
         &__usd {
             position: absolute;
             background-color: $plt--main--black-2;
@@ -47,6 +51,10 @@
         }
     }
     &__body{
+        //height: 245px;
+        @include media-breakpoint-up(md){
+            padding: 0.5em 1em 2em 1em;
+        }
         padding: 0.5em 1em;
         border-left: 1px solid $plt--main--black-2;
         &__header{
@@ -76,6 +84,9 @@
             }
         }
         &__text{
+            @include media-breakpoint-up(md){
+                font-size: 17.5px;
+            }
             font-size: 14px;
             margin-top: 0.5em;
         }
