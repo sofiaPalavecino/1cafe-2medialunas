@@ -1,6 +1,7 @@
+import Button from 'react-bootstrap/Button';
 import './Header.scss'
 
-export default function Header(){
+export default function Header({handleShow}){
     return (
         <header className='header'>
             <div>
@@ -11,7 +12,7 @@ export default function Header(){
                 {/* <div><a href="">Barrios</a></div>
                 <div><a href="">Bares Notables</a></div>
                 <div><a href="">Universidades</a></div> */}
-                <div><a href="">Créditos</a></div>
+                <div onClick={handleShow}>Créditos</div>
             </div>
         </header>
     )
