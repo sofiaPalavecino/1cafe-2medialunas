@@ -161,6 +161,8 @@ function App() {
                             <Carrousel items={twittsElements} />
                             <div className="little-sign">
                                 Construido gracias al aporte de cientos de usuarios de internet
+                                <br />
+                                <span className='little-sign__heart'>&#60;3</span>
                                 <span class="tip"></span>
                             </div>
                         </div>
