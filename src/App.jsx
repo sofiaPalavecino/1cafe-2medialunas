@@ -157,8 +157,12 @@ function App() {
             <section className='-theme-2'>
                 <div className="wrap">
                     <div className="row title-wrapper">
-                        <div className="col-xl order-xl-1 order-2 mt-5 mt-md-4 mt-lx-0">
+                        <div className="col-xl order-xl-1 order-2 mt-5 mt-xl-4 mt-lx-0">
                             <Carrousel items={twittsElements} />
+                            <div className="little-sign">
+                                Construido gracias al aporte de cientos de usuarios de internet
+                                <span class="tip"></span>
+                            </div>
                         </div>
                         <div className="title-wrapper__main col-xl order-xl-2 order-1">
                             <h1 className='main-title'>
