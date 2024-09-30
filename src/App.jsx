@@ -6,6 +6,8 @@ import Carrousel from './components/Carrousel/Carrousel.jsx'
 import ReferenceTable from './components/ReferenceTable/ReferenceTable.jsx'
 import ValuesTable from './components/ValuesTable/ValuesTable.jsx'
 import Masonry from '@mui/lab/Masonry'
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 import data from './data.js'
 import './App.scss'
 
@@ -124,9 +126,34 @@ function App() {
         ]
     }
 
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
         <main>
-            <Header />
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                <Modal.Title>Créditos</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    La idea original fué desarrollada en <strong>Estudio Chinchulín</strong>, con la producción de&nbsp;
+                    <a href="https://www.instagram.com/jeremadrazzo/" target="_blank">@jeremadrazzo</a> y el diseño de <a href="https://www.instagram.com/pilardibujito/" target="_blank">@pilardibujito</a>.
+                    <br />
+                    Podés encontrar la infografía original <a href="https://www.instagram.com/p/C_HJv7RPIcJ/" target="_blank">acá</a>.
+                    <hr />
+                    Este sitio fué desarrollado por <a href="https://github.com/sofiaPalavecino" target="_blank">Sofía Palavecino</a>
+                </Modal.Body>
+                <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                    Cerrar
+                </Button>
+                </Modal.Footer>
+            </Modal>
+            <Header
+                handleShow={handleShow}
+            />
             <section className='-theme-2'>
                 <div className="wrap">
                     <div className="row title-wrapper">
@@ -138,6 +165,7 @@ function App() {
                                 <img className='title-icon' src="./cafe.svg" alt="" /> <span>+</span> <img className='title-icon' src="./medialunas.svg" alt="" />
                                 &nbsp;Índice 2024 <br />Café + 2 Medialunas <br /> Buenos Aires
                                 <h2>Una foto de los precios del clásico combo porteño</h2>
+                                <p className='mt-3'>Basado en la infografía de <a href="https://www.instagram.com/p/C_HJv7RPIcJ/" target="_blank" >@pilardibujito</a></p>
                             </h1>
                         </div>
                     </div>
@@ -260,6 +288,7 @@ function App() {
                     </div>
                 </div>
             </section>
+            <footer>&#169; Estudio Chinchulín</footer>
         </main>
     )
 }
