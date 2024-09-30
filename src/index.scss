@@ -111,6 +111,32 @@ section{
 }
 
 .modal{
+    button {
+        &.btn-secondary{
+            border-radius: 0px !important;
+            background-color: transparent !important;
+            border: 1px solid transparent;
+            color: $plt--main--black-2;
+            &:hover{
+                border: 1px solid $plt--main--black-2;
+                transform: translate(4px, -4px);
+                box-shadow: 4px 4px 0 $plt--main--black-2;
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 8%;
+                    z-index: -1;
+                    background-image: url(/textura.avif);
+                    background-position: 50% 0;
+                }
+            }
+        }
+    }
     &-content{
         background-color: $plt--main--white-bone;
         outline: 0.5px solid $plt--main--black-2;
