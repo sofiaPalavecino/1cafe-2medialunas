@@ -94,7 +94,10 @@ hr {
                 border-right: 1px solid $plt--main--black-2;
             }
             span {
-                font-size: 13.5px;
+                @include media-breakpoint-up(md){
+                    font-size: 13.5px;
+                }
+                font-size: 12px;
                 font-weight: 600;
                 margin-left: 5px;
             }
@@ -109,4 +112,39 @@ hr {
         justify-content: space-between
     }
     justify-content: space-around;
+}
+
+.little-sign{
+    width: 170px;
+    padding: 0.5em;
+    font-size: 14.5px;
+    margin: 3em auto 0 auto;
+    text-align: center;
+    border: 1px solid $plt--main--black-2;
+    transform: translate(-4px, -4px);
+    box-shadow: -4px -4px 0 $plt--main--black-2;
+    position: relative;
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 8%;
+        z-index: -1;
+        background-image: url(/textura.avif);
+        background-position: 50% 0;
+    }
+    .tip{
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: 48%;
+        top: -5%;
+        transform: translate(0%, -100%);
+        border: solid 10px;
+        border-color: transparent transparent $plt--main--black-2 transparent;
+    }
 }

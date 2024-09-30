@@ -112,6 +112,9 @@ section{
 
 .modal{
     button {
+        &:focus{
+            box-shadow: none !important;
+        }
         &.btn-secondary{
             border-radius: 0px !important;
             background-color: transparent !important;
@@ -134,6 +137,9 @@ section{
                     background-image: url(/textura.avif);
                     background-position: 50% 0;
                 }
+            }
+            &:focus {
+                color: $plt--main--black-2 !important;
             }
         }
     }
