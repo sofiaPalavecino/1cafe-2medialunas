@@ -2,18 +2,22 @@
 
 .slider-container {
     .slick-track{
-        @include media-breakpoint-up(md){
-            width: 450px !important;
+        @include media-breakpoint-up(sm){
+            width: 480px !important;
         }
-        width: 350px !important;
+        min-width: 280px !important;
+        display: grid;
+        //width: 350px !important;
+        //width: 480px !important;
     }
     .slick-slide{
-        @include media-breakpoint-up(md){
-            height: 280px !important;
-            width: 450px !important;
+        @include media-breakpoint-up(sm){
+            height: 350px !important;
+            max-width: 480px !important;
         }
+        min-width: 280px !important;
         height: 285px;
-        width: 350px !important;
+        //width: 350px !important;
         margin: 0 auto;
     }
 }
