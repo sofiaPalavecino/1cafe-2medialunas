@@ -15,6 +15,16 @@
     span{
         font-weight: 700;
         margin-right: auto;
+        margin-left: 0.5em;
+        @include media-breakpoint-down(md){
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__logo{
+        @include media-breakpoint-down(sm){
+            display: flex;
+        }
     }
     &__img{
         margin-right: 1em;

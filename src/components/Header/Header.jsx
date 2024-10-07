@@ -23,7 +23,7 @@ export default function Header({handleShow, t, i18n, currLgn, setCurrLgn}){
 
     return (
         <header className='header'>
-            <div>
+            <div className='header__logo'>
                 <img className='header__img' src="./cafe_medialunas.svg" alt="" />
                 <span>1 Café + 2 Medialunas</span>
             </div>
