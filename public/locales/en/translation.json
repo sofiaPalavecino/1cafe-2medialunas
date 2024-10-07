@@ -1,0 +1,49 @@
+{
+    "title": {
+        "main": "2024 index <br />Coffee + 2 Medialunas <br /> Buenos Aires",
+        "subtitle": "A picture of the prices of the classic Buenos Aires combo",
+        "text": "Based on the infography of "
+    },
+    "modal": {
+        "text1": "The original idea was developed in <strong>Estudio Chinchulín</strong>, with the production of&nbsp; <a href='https://www.instagram.com/jeremadrazzo/' target='_blank'>@jeremadrazzo</a> and the design of <a href='https://www.instagram.com/pilardibujito/' target='_blank'>@pilardibujito</a>.",
+        "text2": "You can find the original infography <a href='https://www.instagram.com/p/C_HJv7RPIcJ/' target='_blank'>here</a>."
+    },
+    "tables": {
+        "title": "How are things in Buenos Aires?",
+        "titles": {
+            "chains": "Chains",
+            "universities": "Universities",
+            "coffee-chains": "Coffee Chains",
+            "notable": "Notables"
+        },
+        "columns": {
+            "m-m": "Lowest/Highest",
+            "fast-food": "Fast food",
+            "university": "University",
+            "cafeteria": "Cafeterias",
+            "place": "Store",
+            "neighborhood": "Neighborhood"
+        }
+    },
+    "proportion": {
+        "title": "How much does a coffee with two medialunas cost in Buenos Aires?",
+        "proportion": "Proportion"
+    },
+    "reference-table": {
+        "title": "August 2024 Reference",
+        "subtitle": "Dolar Blue exchange rate of 23/08/2024",
+        "text": "Prices updated until 23/8. Don't take this literally, take it easy."
+    },
+    "twitts": {
+        "@HAGOV875": "In Constitución &#8223;El Gordo Valor&#8221; sells &#8223;coffee as usual&#8221; with two superb medialunas at 8500 pesos. They accept payments in bitcoin and if you tell them that &#8223;El Tuerca&#8221; sent you, they give you a discount.",
+        "@CandenteMañana": "The universe might change but &#8223;El Británico&#8221; never will. $3400.",
+        "@quebracho_castania": "In the CECEN it costs $1200. I’ve been having breakfast there everyday for three years.",
+        "@Ericpulgar_": "Some crispy $1500. It isn’t a tracendental grastronomical experience but having breakfast while you look at a gigantography of Dibu Martinez sounds like a good plan. Kinda.",
+        "@Juuli_1995": "In &#8223;Café Martinez&#8221; it costs $4150 and the coffee is foamy and sexy.",
+        "@Gordigol69": "-Le Pain Quotidien- means the everyday pain in french. $9800 for a coffee with 2 medialunas. Ouch."
+    },
+    "little-sign": "Built thanks to the contribution of hundreds of internet users",
+    "credits": "Credits",
+    "close": "Close",
+    "thermometer": "Thermometer"
+}
