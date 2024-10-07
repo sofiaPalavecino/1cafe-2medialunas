@@ -15,6 +15,9 @@ import './App.scss'
 
 function App() {
     const { t, i18n } = useTranslation()
+    const [ currLgn, setCurrLgn ] = useState('es')
+
+    console.log(currLgn)
 
     const allData = data.data
 
@@ -158,6 +161,8 @@ function App() {
                 handleShow={handleShow}
                 t={t}
                 i18n={i18n}
+                currLgn = {currLgn}
+                setCurrLgn = {setCurrLgn}
             />
             <section className='-theme-2'>
                 <div className="wrap">
