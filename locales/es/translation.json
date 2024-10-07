@@ -1,0 +1,49 @@
+{
+    "title": {
+        "main": "Índice 2024 <br />Café + 2 Medialunas <br /> Buenos Aires",
+        "subtitle": "Una foto de los precios del clásico combo porteño",
+        "text": "Basado en la infografía de "
+    },
+    "modal": {
+        "text1": "La idea original fué desarrollada en <strong>Estudio Chinchulín</strong>, con la producción de&nbsp; <a href='https://www.instagram.com/jeremadrazzo/' target='_blank'>@jeremadrazzo</a> y el diseño de <a href='https://www.instagram.com/pilardibujito/' target='_blank'>@pilardibujito</a>.",
+        "text2": "Podés encontrar la infografía original <a href='https://www.instagram.com/p/C_HJv7RPIcJ/' target='_blank'>acá</a>."
+    },
+    "tables": {
+        "title": "¿Cómo está la cosa?",
+        "titles": {
+            "chains": "Cadenas",
+            "universities": "Facultades",
+            "coffee-chains": "Cadenas de Café",
+            "notable": "Notables"
+        },
+        "columns": {
+            "m-m": "Menor/Mayor",
+            "fast-food": "Comida Rápida",
+            "university": "Facultad",
+            "cafeteria": "Cafeterías",
+            "place": "Lugar",
+            "neighborhood": "Barrio"
+        }
+    },
+    "proportion": {
+        "title": "¿Cúanto sale un café con medialunas en Buenos Aires?",
+        "proportion": "Proporción"
+    },
+    "reference-table": {
+        "title": "Referencia Agosto 2024",
+        "subtitle": "Cambio dólar blue al 23/08/2024",
+        "text": "Precios actualizados hasta el 23/8. No lo tome con literalidad, tómelo con un vasito de soda."
+    },
+    "twitts": {
+        "@HAGOV875": "En Constitución el Gordo Valor vende &#8223;café de normalidad&#8221; con dos soberbias medialunas a 8500 pesos. Acepta pago en bitcoin y si le decís que vas de parte de &#8223;El Tuerca&#8221; te hace descuento.",
+        "@CandenteMañana": "Cambiará el universo pero el Británico nunca lo hará. $3400.",
+        "@quebracho_castania": "En el CECEN está a $1200, hace tres años que desayuno ahí casi todos los días.",
+        "@Ericpulgar_": "$1500 crocantes. No es una experiencia gastronómica trascendental pero desayunar mientras mirás una gigantografía del Dibu Martinez es un buen plan. Ponele.",
+        "@Juuli_1995": "En Café Martinez está a $4150 y el café es espumoso y sensual.",
+        "@Gordigol69": "-Le Pain Quotidien- significa el dolor cotidiano en francés. $9800 por un café y 2 medialunas. Ouch."
+    },
+    "little-sign": "Construido gracias al aporte de cientos de usuarios de internet",
+    "credits": "Créditos",
+    "close": "Cerrar",
+    "thermometer": "Termómetro"
+}
