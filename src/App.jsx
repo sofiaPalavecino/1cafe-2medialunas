@@ -6,14 +6,17 @@ import Carrousel from './components/Carrousel/Carrousel.jsx'
 import ReferenceTable from './components/ReferenceTable/ReferenceTable.jsx'
 import ValuesTable from './components/ValuesTable/ValuesTable.jsx'
 import Masonry from '@mui/lab/Masonry'
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
+import { useTranslation } from 'react-i18next'
+import parse from 'html-react-parser'
 import data from './data.js'
 import './App.scss'
 
 function App() {
+    const { t, i18n } = useTranslation()
 
-    const [allData, setAllData] = useState(data.data)
+    const allData = data.data
 
     const twitts = allData.twitts
     const cafes = allData.cafes.sort((a, b) => a.price - b.price);
@@ -66,7 +69,7 @@ function App() {
 
     const cafesTables = splitArrayInParts(cafes, 4).map((cafesPart) => (
         <ValuesTable 
-            headers={["Lugar", "Barrio", "ARS", "USD"]}
+            headers={[t("tables.columns.place"), t("tables.columns.neighborhood"), "ARS", "USD"]}
             barrio={true}
             line={true}
             info={cafesPart}
@@ -88,14 +91,15 @@ function App() {
         return cafes.find((cafe) => cafe.id === id);
     }
     
-    const twittsElements = twitts.map((t) => {
-        const cafe = getCafeById(t.cafeId)
+    const twittsElements = twitts.map((twitt) => {
+        const cafe = getCafeById(twitt.cafeId)
         return (
             <MainSign
-                key={`sign-${t.id}`}
+                key={`sign-${twitt.id}`}
                 cafe={cafe}
                 getPriceLevel={() => getPriceLevel(cafe.price)}
-                {...t}
+                t={t}
+                {...twitt}
             />
         )
     })
@@ -135,24 +139,25 @@ function App() {
         <main>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                <Modal.Title>Créditos</Modal.Title>
+                <Modal.Title>{t('credits')}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    La idea original fué desarrollada en <strong>Estudio Chinchulín</strong>, con la producción de&nbsp;
-                    <a href="https://www.instagram.com/jeremadrazzo/" target="_blank">@jeremadrazzo</a> y el diseño de <a href="https://www.instagram.com/pilardibujito/" target="_blank">@pilardibujito</a>.
+                    {parse(t("modal.text1"))}
                     <br />
-                    Podés encontrar la infografía original <a href="https://www.instagram.com/p/C_HJv7RPIcJ/" target="_blank">acá</a>.
+                    {parse(t("modal.text2"))}
                     <hr />
                     Dev: <a href="https://github.com/sofiaPalavecino" target="_blank">Sofía Palavecino</a>
                 </Modal.Body>
                 <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
-                    Cerrar
+                    {t("close")}
                 </Button>
                 </Modal.Footer>
             </Modal>
             <Header
                 handleShow={handleShow}
+                t={t}
+                i18n={i18n}
             />
             <section className='-theme-2'>
                 <div className="wrap">
@@ -160,7 +165,7 @@ function App() {
                         <div className="col-xl order-xl-1 order-2 mt-5 mt-xl-4 mt-lx-0">
                             <Carrousel items={twittsElements} />
                             <div className="little-sign">
-                                Construido gracias al aporte de cientos de usuarios de internet
+                                {t("little-sign")}
                                 <br />
                                 <span className='little-sign__heart'>&#60;3</span>
                                 <span class="tip"></span>
@@ -169,9 +174,9 @@ function App() {
                         <div className="title-wrapper__main col-xl order-xl-2 order-1">
                             <h1 className='main-title'>
                                 <img className='title-icon' src="./cafe.svg" alt="" /> <span>+</span> <img className='title-icon' src="./medialunas.svg" alt="" />
-                                &nbsp;Índice 2024 <br />Café + 2 Medialunas <br /> Buenos Aires
-                                <h2>Una foto de los precios del clásico combo porteño</h2>
-                                <p className='mt-3'>Basado en la infografía de <a href="https://www.instagram.com/p/C_HJv7RPIcJ/" target="_blank" >@pilardibujito</a></p>
+                                &nbsp;{parse(t("title.main"))}
+                                <h2>{t("title.subtitle")}</h2>
+                                <p className='mt-3'>{t("title.text")}<a href="https://www.instagram.com/p/C_HJv7RPIcJ/" target="_blank" >@pilardibujito</a></p>
                             </h1>
                         </div>
                     </div>
@@ -180,10 +185,10 @@ function App() {
             <hr className='-theme-1' />
             <section className='-theme-1'>
                 <div className="wrap">
-                    <h2 className='-bold-italic mb-4'>¿Cómo está la cosa?</h2>
+                    <h2 className='-bold-italic mb-4'>{t("tables.title")}</h2>
                     <Masonry columns={{xs: 1, md: 2, lg: 3}} spacing={4}>
                         <ValuesTable 
-                            headers={["Menor/Mayor", "ARS", "USD"]}
+                            headers={[t("tables.columns.m-m"), "ARS", "USD"]}
                             currency={currencies[2024].currency}
                             title="2024"
                             info={currenciesData[2024]}
@@ -191,7 +196,7 @@ function App() {
                             tableStyle={{"max-width": "360px", "margin": "0 auto"}}
                         />
                         <ValuesTable 
-                            headers={["Menor/Mayor", "ARS", "USD"]}
+                            headers={[t("tables.columns.m-m"), "ARS", "USD"]}
                             currency={currencies[2023].currency}
                             title="2023"
                             year={2023}
@@ -200,7 +205,7 @@ function App() {
                             tableStyle={{"max-width": "360px", "margin": "0 auto"}}
                         />
                         <ValuesTable 
-                            headers={["Menor/Mayor", "ARS", "USD"]}
+                            headers={[t("tables.columns.m-m"), "ARS", "USD"]}
                             currency={currencies[2022].currency}
                             title="2022"
                             year={2022}
@@ -209,31 +214,33 @@ function App() {
                             tableStyle={{"max-width": "360px", "margin": "0 auto"}}
                         />
                         <CurrencyTable />
-                        <ReferenceTable />
+                        <ReferenceTable
+                            t={t}
+                        />
                         <ValuesTable
-                            title="Cadenas"
-                            headers={["Comida Rápida", "ARS", "USD"]}
+                            title={t("tables.titles.chains")}
+                            headers={[t("tables.columns.fast-food"), "ARS", "USD"]}
                             info={fastFood}
                             getPriceLevelClass={getPriceLevelClass}
                             dots={true}
                         />
                         <ValuesTable
-                            title="Notables"
+                            title={t("tables.titles.notable")}
                             headers={["Bar", "ARS", "USD"]}
                             info={cafesNotables}
                             getPriceLevelClass={getPriceLevelClass}
                             dots={true}
                         />
                         <ValuesTable
-                            title="Facultades"
-                            headers={["Facultad", "ARS", "USD"]}
+                            title={t("tables.titles.universities")}
+                            headers={[t("tables.columns.university"), "ARS", "USD"]}
                             info={cafesUni}
                             getPriceLevelClass={getPriceLevelClass}
                             dots={true}
                         />
                         <ValuesTable
-                            title="Cadenas de Café"
-                            headers={["Cafeterías", "ARS", "USD"]}
+                            title={t("tables.titles.coffee-chains")}
+                            headers={[t("tables.columns.cafeteria"), "ARS", "USD"]}
                             info={cafeChain}
                             getPriceLevelClass={getPriceLevelClass}
                             dots={true}
@@ -249,12 +256,12 @@ function App() {
                 <div className="wrap">
                     <div className="row">
                         <div className="col col-xl-3">
-                            <h4 className='fs-5 mb-0'><strong>¿Cúanto sale un café con medialunas en Buenos Aires?</strong></h4>
+                            <h4 className='fs-5 mb-0'><strong>{t("proportion.title")}</strong></h4>
                         </div>
                         <div className="col scale-col mt-4 mt-xl-0 d-flex align-items-center">
                             <div className="scale w-100">
                                 <div className="currencies">
-                                    <span>Proporción</span>
+                                    <span>{t("proportion.proportion")}</span>
                                     <div className="currencies__values mt-2 mt-sm-0">
                                         <div className="currencies__values--box -level-4__2">
                                             <div></div>

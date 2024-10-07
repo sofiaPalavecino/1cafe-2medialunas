@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next'
+import parse from 'html-react-parser'
 import './MainSign.scss'
 
-export default function MainSign({cafe, user, userName, text, picture, getPriceLevel}) {
+export default function MainSign({cafe, user, userName, text, picture, getPriceLevel, t}) {
 
     return (
         <div className="main-sign">
@@ -20,7 +22,7 @@ export default function MainSign({cafe, user, userName, text, picture, getPriceL
                     </div>
                 </div>
                 <div className="main-sign__body__text">
-                    <span>{text}</span>
+                    <span>{parse(t(`twitts.${user}`))}</span>
                 </div>
             </div>
         </div>
